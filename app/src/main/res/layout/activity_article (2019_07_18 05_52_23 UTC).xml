@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/entire"
+
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/black">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </android.support.v4.view.ViewPager>
+
+        <!--이미지뷰의 크기비율과 원본이미지뷰의 크기가 너무 안맞으면 fitxy를 해도 잘 안 될 수 있다.-->
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/artInfo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/진한검정투명"
+        >
+
+        <com.github.siyamed.shapeimageview.CircularImageView
+            android:id="@+id/userProfileImage"
+            android:layout_width="41dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_account_circle_black_25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:siBorderColor="@android:color/white"
+            app:siBorderWidth="3dp"
+            android:onClick="goToUserProfileActivity"/>
+
+        <!--<TextView-->
+            <!--android:id="@+id/textViewDesc"-->
+            <!--android:layout_width="320dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_marginEnd="8dp"-->
+            <!--android:layout_marginStart="8dp"-->
+            <!--android:layout_marginTop="16dp"-->
+            <!--android:text="작품 한 줄 설명"-->
+            <!--android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"-->
+            <!--android:textColor="@android:color/background_light"-->
+            <!--app:layout_constraintEnd_toEndOf="parent"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/textViewTime" />-->
+
+        <TextView
+            android:id="@+id/textViewUser"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:text="작성자 이름"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:textColor="@android:color/background_light"
+            app:layout_constraintStart_toEndOf="@+id/userProfileImage"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+
+        <TextView
+            android:id="@+id/textViewTime"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:text="2018년 2월 15일"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+            android:textColor="@android:color/background_light"
+            app:layout_constraintStart_toEndOf="@+id/textViewUser"
+            app:layout_constraintTop_toTopOf="@+id/textViewUser" />
+
+        <TextView
+            android:id="@+id/textViewRecom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewUser"
+            android:layout_marginBottom="40dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="8dp"
+            android:onClick="goToLikeActivity"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="좋아요 2776명"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small.Inverse"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/smileBtn" />
+
+        <TextView
+            android:id="@+id/textViewComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewUser"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="8dp"
+            android:onClick="goToCommentActivity"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="댓글 8866개"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small.Inverse"
+            android:textColor="@android:color/background_light"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textViewRecom"
+            app:layout_constraintTop_toBottomOf="@+id/imageButton4" />
+
+        <TextView
+            android:id="@+id/textViewValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewUser"
+            android:layout_marginBottom="130dp"
+            android:layout_marginStart="8dp"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="작품의 가치 : 1111"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Small.Inverse"
+            android:textColor="@android:color/background_light"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/textViewRecom"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="작품의 제목"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/background_light"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/userProfileImage"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/smileBtn"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/투명색"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewValue"
+            app:srcCompat="@drawable/ic_mood_white_24dp" />
+<!--            android:onClick="setSmile"-->
+        <ImageButton
+            android:id="@+id/imageButton4"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/투명색"
+            app:layout_constraintStart_toEndOf="@+id/smileBtn"
+            app:layout_constraintTop_toBottomOf="@+id/textViewValue"
+            app:srcCompat="@drawable/ic_chat_white_25dp"
+            android:scaleType="fitXY"
+            android:onClick="goToCommentActivityToWrite"/>
+
+        <TextView
+            android:id="@+id/textViewLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="서울, 대한민국"
+            android:textColor="@color/common_google_signin_btn_text_dark_default"
+            app:layout_constraintStart_toEndOf="@+id/textViewTime"
+            app:layout_constraintTop_toBottomOf="@+id/textViewTitle" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/투명색"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toEndOf="@+id/imageButton4"
+            app:layout_constraintTop_toBottomOf="@+id/textViewValue"
+            app:srcCompat="@drawable/ic_zoom_in_white_24dp"
+            android:onClick="goToImageZoomActivity"/>
+
+        <ImageButton
+            android:id="@+id/deleteBtn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/투명색"
+            android:scaleType="fitXY"
+            app:layout_constraintStart_toEndOf="@+id/imageButton"
+            app:layout_constraintTop_toBottomOf="@+id/textViewValue"
+            app:srcCompat="@drawable/ic_delete_forever_white_24dp"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+
+</FrameLayout>
+

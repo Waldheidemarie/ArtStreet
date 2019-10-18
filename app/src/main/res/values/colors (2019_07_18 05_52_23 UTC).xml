@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#5c6bc0</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#fefefe</color>
+    <color name="cardname">#979393</color>
+    <color name="검정투명">#11000000</color>
+    <color name="rrr">#fefefe</color>
+    <color name="투명색">#00000000</color>
+    <color name="bright_gray">#ef9a9a</color>
+    <color name="진한검정투명">#7b000000</color>
+    <color name="commentLineColor">#ef9a9a</color>
+    <color name="drawerColor">#fce4ec</color>
+    <color name="listItemclick">#e0e0e0</color>
+    <color name="gridviewitem">#51b9f6ca</color>
+    <color name="chatBubbleForMe">#a5d6a7</color>
+    <color name="light_gray">#cfd8dc</color>
+    <color name="dark_blue_green">#00796b</color>
+</resources>

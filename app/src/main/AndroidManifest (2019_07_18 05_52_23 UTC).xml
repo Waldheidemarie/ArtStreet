@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.chisu.myapplication">
+
+    <uses-permission-sdk-23 android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.any"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.front.autofocus"
+        android:required="false" />
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:resizeable="true"
+        android:smallScreens="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <activity android:name=".Chat.ChatList" />
+        <activity android:name=".RegisterUserActivity" />
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".PaintBoard.CanvasActivity" />
+        <activity
+            android:name=".PaintBoard.PenPaletteDialog"
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
+        <activity
+            android:name=".PaintBoard.ColorPaletteDialog"
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
+        <activity
+            android:name=".PaintBoard.BestPaintBoardActivity"
+            android:launchMode="singleTask" />
+        <activity
+            android:name=".PaintBoard.DrawingFinishDialog1"
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
+        <activity
+            android:name=".PaintBoard.DrawingFinishDialog2"
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
+        <activity android:name=".Article" />
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity android:name=".MainMapActivity" />
+
+        <activity android:name=".TabActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.SEARCH" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".ChangeProfile" />
+        <activity android:name=".Like.LikeActivity" />
+        <activity
+            android:name=".Comment.CommentActivity"
+            android:windowSoftInputMode="adjustResize|adjustPan" />
+        <activity
+            android:name=".Comment.CommentDialogActivity"
+            android:theme="@style/Theme.AppCompat.Light.Dialog" />
+        <activity android:name=".ImageZoomActivity" />
+        <activity android:name=".UserProfileActivity" />
+        <activity android:name=".Follow.FollowerActivity" />
+        <activity android:name=".DrawingsActivity" />
+        <activity android:name=".PaintBoard.BestPaintBoardActivityVertical" />
+
+        <service android:name=".Chat.chatService" />
+        <service android:name=".Chat.Socket_Service" />
+
+        <activity android:name=".Chat.Chat_room_Activity" />
+        <activity android:name=".Chat.ChattingRoom" />
+
+        <service
+            android:name=".Chat.MyService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".AR.ar.ARActivity" />
+        <activity android:name=".CapturedActivity" />
+        <activity android:name=".SearchActivity" />
+
+    </application>
+
+</manifest>
